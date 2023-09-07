@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    @apply bg-bg font-sans text-base font-normal text-black;
+  }
+}
+
+@layer components {
+  .input_container {
+    @apply relative mx-auto my-5 grid h-[3rem] w-[18rem] place-items-center items-center rounded-base shadow-base;
+  }
+
+  .input_panel {
+    @apply absolute h-full w-full rounded-base p-4 outline-none;
+  }
+
+  .input_label {
+    @apply absolute left-4 cursor-text bg-white text-sm text-gray transition-all duration-500 ease-out;
+  }
+
+  .input_panel:focus {
+    @apply border-2 border-solid border-black;
+  }
+
+  .input_panel:focus + .input_label,
+  .input_panel:not(:placeholder-shown) + .input_label {
+    @apply -top-3 text-[0.8rem];
+  }
+
+  .side-icon {
+    @apply m-3 inline text-2xl text-gray-font;
+  }
+
+  .side-section {
+    @apply m-2 flex w-full items-center justify-start px-4;
+  }
+
+  .side-actived {
+    @apply m-2 flex w-full items-center justify-start border-l-[5px] border-solid border-prime bg-[#FCF4EC] pl-[11px] pr-4;
+  }
+
+  #icon:checked + #profile {
+    display: block;
+  }
+
+  .dropdown-user {
+    @apply m-1 flex;
+  }
+
+  .btn {
+    @apply flex items-center rounded-full p-2 shadow-base;
+  }
+
+  #pubBox:hover #bounty {
+    @apply w-12 p-2;
+  }
+
+  #pubBox:hover #dollar {
+    @apply h-8 w-8;
+  }
+
+  #bounty:not(:placeholder-shown) {
+    @apply w-12 p-2;
+  }
+
+  #bounty:not(:placeholder-shown) + #dollar {
+    @apply h-8 w-8;
+  }
+
+  .dropdown-category {
+    @apply m-1;
+  }
+
+  .dropdown-category:hover {
+    @apply font-bold text-prime;
+  }
+
+  #category:checked + #catelist {
+    @apply block;
+  }
+
+  #you {
+    justify-content: flex-end;
+  }
+
+  #you .message-content {
+			@apply shadow-base justify-end bg-[#bdee81];
+  }
+
+  #other {
+			@apply justify-start;
+  }
+
+  #other .message-content {
+			@apply bg-bg shadow-base justify-start;
+  }
+
+	.ta_container {
+			grid-template-columns:56px auto 72px;
+	}
+
+	.comment_container {
+			grid-template-rows: 20px auto;
+	}
+}
